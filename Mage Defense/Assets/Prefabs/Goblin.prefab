@@ -8124,8 +8124,9 @@ GameObject:
   - component: {fileID: 4149333386761196532}
   - component: {fileID: 4149333386755741672}
   - component: {fileID: 5359676276112902791}
-  - component: {fileID: -6296823195916300177}
   - component: {fileID: 3357687277906122453}
+  - component: {fileID: -5388472768718660723}
+  - component: {fileID: 7421841455410695447}
   m_Layer: 0
   m_Name: Goblin
   m_TagString: Enemy
@@ -8162,7 +8163,7 @@ Animation:
   m_GameObject: {fileID: 4149333386761490196}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400036, guid: 2de911d45fd8d124c90453569b0194ca, type: 3}
+  m_Animation: {fileID: 7400000, guid: 6a02cd66b633d8a46a5456f02d4fb0b6, type: 3}
   m_Animations:
   - {fileID: 7400016, guid: 2de911d45fd8d124c90453569b0194ca, type: 3}
   - {fileID: 7400018, guid: 2de911d45fd8d124c90453569b0194ca, type: 3}
@@ -8202,18 +8203,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &-6296823195916300177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4149333386761490196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8df2d2d16f5be40548cf1eff4a902508, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3357687277906122453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8230,6 +8219,31 @@ MonoBehaviour:
   damage: 5
   agent: {fileID: 5359676276112902791}
   damageSpeed: 0.5
+--- !u!114 &-5388472768718660723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4149333386761490196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407950463ca494d7cb6681f9e0732a37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &7421841455410695447
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4149333386761490196}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.8072381, z: 1}
+  m_Center: {x: 0, y: 0.40361905, z: 0}
 --- !u!1 &4149333386761490198
 GameObject:
   m_ObjectHideFlags: 0

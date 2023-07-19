@@ -1178,14 +1178,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0897f80f1cea42e4e85b6ba4cd5ddde8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textElement: {fileID: 0}
+  textElement: {fileID: 525770007}
   chestHealth: 1000
   round: 1
   isSpawning: 0
   fireballParticle: {fileID: 0}
-  Goblin: {fileID: 0}
-  Porky: {fileID: 0}
-  Spider: {fileID: 0}
+  Goblin: {fileID: 4149333386761490196, guid: 87aad4b3bae3a43848b0b4f0153d9adf, type: 3}
+  Orc: {fileID: 6333811552363412898, guid: 95d488fd0840040a9a679909e0153620, type: 3}
+  Spider: {fileID: 8700062064679330978, guid: 9682c5844464a4f8799bda66f74f7a0f, type: 3}
   spawnLocation: {x: -233, y: -23.4, z: 28.42}
 --- !u!4 &814054303
 Transform:

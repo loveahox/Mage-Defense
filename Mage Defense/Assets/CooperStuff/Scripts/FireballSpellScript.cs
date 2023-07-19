@@ -5,11 +5,14 @@ using UnityEngine;
 public class FireballSpellScript : MonoBehaviour
 {
 
-    
+    mobScript mS;
+    public float damage = 20;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        mS = FindObjectOfType<mobScript>();
         Destroy(gameObject, 1f);
     }
 
@@ -17,7 +20,8 @@ public class FireballSpellScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Destroy(collision.gameObject);
+            
+            mS.doDamage(damage);
         }
     }
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 223595305617632689}
   - component: {fileID: 3358388990835247758}
   - component: {fileID: 5935934492016251687}
+  - component: {fileID: 2891076675958546806}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Enemy
@@ -93,10 +94,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dd90f27a50824b2da165c48518adfdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 25
   damage: 10
   agent: {fileID: 223595305617632689}
   damageSpeed: 0.5
+  Originalspeed: 0
+  slowed: 0
+  slowedDuration: 1
+  slowedCountdownRate: 2
 --- !u!114 &5935934492016251687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +114,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8df2d2d16f5be40548cf1eff4a902508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &2891076675958546806
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8700062064679330978}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.808563, y: 2.504673, z: 6.0109606}
+  m_Center: {x: 0.042037964, y: 2.2833996, z: 0.7842064}
 --- !u!1 &8700062064679330980
 GameObject:
   m_ObjectHideFlags: 0

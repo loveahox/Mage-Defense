@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     //spawn manager
     public GameObject Goblin;
-    public GameObject Porky;
+    public GameObject Orc;
     public GameObject Spider;
     public Vector3 spawnLocation = new Vector3(-233f, -23.4f, 28.42f);
 
@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     {
         gm = this;
         spawnEnemies(round);
+        chestHealth = 1000;
 
         //audio
         audioSource = GetComponent<AudioSource>();
@@ -49,11 +50,11 @@ public class GameManager : MonoBehaviour
     {
         if (!isSpawning)
         {
-            for (int count = 0; count < round + 2; count++)
+            for (int count = 0; count < round + 1; count++)
             {
                 spawnMob("Goblin");
                 StartCoroutine(wait());
-                spawnMob("Porky");
+                spawnMob("Orc");
                 StartCoroutine(wait());
                 spawnMob("Spider");
             }
@@ -69,9 +70,9 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(Spider, spawnLocation, Quaternion.identity);
         }
-        if (mobName.Equals("Porky"))
+        if (mobName.Equals("Orc"))
         {
-            Instantiate(Porky, spawnLocation, Quaternion.identity);
+            Instantiate(Orc, spawnLocation, Quaternion.identity);
         }
     }
     // Update is called once per frame
