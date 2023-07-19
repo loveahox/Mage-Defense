@@ -13,6 +13,12 @@ public class MusicManager : MonoBehaviour
     public AudioClip iceSpikesClip;
     public AudioClip earthquakeClip;
     public AudioClip blackHoleClip;
+
+    public ParticleSystem explosionParticle;
+    public ParticleSystem blackHoleParticle;
+    public ParticleSystem iceSpicePatricle;
+    public ParticleSystem earthquakeParticle;
+
     private AudioSource audioSource;
 
     private void Awake()
@@ -55,8 +61,20 @@ public class MusicManager : MonoBehaviour
 
     }
 
+
+
+    //vfx
+    public void fireballVFX()
+    { 
+    explosionParticle.Play();
+    }
+
+
+
+
     void Start()
     {
+        explosionParticle.Stop();
         audioSource = GetComponent<AudioSource>();
 
     }
