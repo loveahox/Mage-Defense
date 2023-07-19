@@ -15,10 +15,22 @@ public class GameManager : MonoBehaviour
     public bool isSpawning = false;
     public bool damage = false;
 
-    //Milos
+    //VFX
     private Animator anim;
-    public ParticleSystem fireballParticle;
-     private AudioSource audioSource;
+    
+    //SFX
+    private AudioSource audioSource;
+
+    public Music[] musics;
+
+    private string currentMusicID;
+
+    public AudioClip fireballClip;
+    public AudioClip iceSpikesClip;
+    public AudioClip earthquakeClip;
+    public AudioClip blackHoleClip;
+
+
 
     //spawn manager
     public GameObject Goblin;
@@ -40,6 +52,7 @@ public class GameManager : MonoBehaviour
         chestHealth = 1000;
 
         //audio
+        ChangeMusic("Main");
         audioSource = GetComponent<AudioSource>();
     }
     public void attacking(float dmg)
@@ -101,5 +114,50 @@ public class GameManager : MonoBehaviour
             spawnEnemies(round);
         }
         textElement.text = "Health: " + chestHealth+" Wave: "+round;
+    }
+
+    //SFX
+    private void Awake()
+    {
+        //create audiosource
+        foreach (Music m in musics)
+        {
+            m.source = gameObject.AddComponent<AudioSource>();
+            m.source.clip = m.clip;
+        }
+    }
+
+    public void ChangeMusic(string newMusicID)
+    {
+
+        //stop current music
+        foreach (Music m in musics)
+        {
+            if (m.musicID == currentMusicID)
+            {
+                m.source.Stop();
+                break;
+            }
+
+
+        }
+
+        //change currentmusicID
+
+        currentMusicID = newMusicID;
+
+        //play new music
+        foreach (Music m in musics)
+        {
+            if (m.musicID == currentMusicID)
+            {
+                m.source.Play();
+                break;
+            }
+
+
+        }
+
+
     }
 }

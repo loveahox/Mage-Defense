@@ -33,6 +33,7 @@ public class MusicManager : MonoBehaviour
 
     public void ChangeMusic(string newMusicID)
     {
+
         //stop current music
         foreach (Music m in musics)
         {
@@ -46,7 +47,9 @@ public class MusicManager : MonoBehaviour
         }
 
         //change currentmusicID
+
         currentMusicID = newMusicID;
+
         //play new music
         foreach (Music m in musics)
         {
@@ -59,6 +62,7 @@ public class MusicManager : MonoBehaviour
 
         }
 
+
     }
 
 
@@ -70,10 +74,9 @@ public class MusicManager : MonoBehaviour
     }
 
 
-
-
     void Start()
     {
+        ChangeMusic("Main");
         explosionParticle.Stop();
         audioSource = GetComponent<AudioSource>();
 
