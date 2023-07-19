@@ -58,7 +58,7 @@ public class mobScript : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Sticky"))
+        if (collision.gameObject.CompareTag("Sticky") && !slowed)
         {
             agent.speed=Originalspeed-=2;
             slowed = true;
