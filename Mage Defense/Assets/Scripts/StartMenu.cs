@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class StartMenu : MonoBehaviour
-public float PlayButton;
-private Button button;
+
+    public class StartMenu : MonoBehaviour
 {
+    public float PlayButton;
+   
+
    public string newGameLevel = "Level1";
    public void NewGameButton()
    {
@@ -16,7 +18,6 @@ private Button button;
 // Start is called before the first frame update
     void Start()
     {
-        button = GetComponent<Button>();
-        button.onClick.AddListener(PlayButton);
+       
     }
 }
