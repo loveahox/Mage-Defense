@@ -7,6 +7,7 @@ public class SpellUsage : MonoBehaviour
     public GameObject lightningSpellPrefab;
     public GameObject fireballSpellPrefab;
     public GameObject earthquakeSpellPrefab;
+    public GameObject blackHoleSpellPrefab;
     public GameObject glueTowerPrefab;
 
     public float lightningCooldown = 0f;
@@ -20,6 +21,10 @@ public class SpellUsage : MonoBehaviour
     public float earthquakeCooldown = 0f;
     public float earthquakeCooldownRate = 5f;
     public bool isEarthquakeCooldown = false;
+
+    public float blackHoleCooldown = 0f;
+    public float blackHoleCooldownRate = 5f;
+    public bool isBlackHoleCooldown = false;
 
     public float glueCooldown = 0f;
     public float glueCooldownRate = 5f;
@@ -116,6 +121,24 @@ public class SpellUsage : MonoBehaviour
             }
         }
     }
+    void CastBlackHole()
+    {
+        if (Input.GetKeyDown(KeyCode.A) && !isBlackHoleCooldown)
+        {
+            Instantiate(blackHoleSpellPrefab, worldPosition, blackHoleSpellPrefab.transform.rotation);
+            isBlackHoleCooldown = true;
+            blackHoleCooldown = 1f;
+        }
+        if (isBlackHoleCooldown)
+        {
+            blackHoleCooldown -= 1 / blackHoleCooldownRate * Time.deltaTime;
+            if (blackHoleCooldown <= 0f)
+            {
+                blackHoleCooldown = 0f;
+                isBlackHoleCooldown = false;
+            }
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -129,6 +152,7 @@ public class SpellUsage : MonoBehaviour
         CastLightning();
         CastFireball();
         CastEarthquake();
+        CastBlackHole();
         PlaceGlue();
     }
 }
