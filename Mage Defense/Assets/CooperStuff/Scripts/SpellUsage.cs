@@ -25,6 +25,11 @@ public class SpellUsage : MonoBehaviour
     public float glueCooldownRate = 5f;
     public bool isGlueCooldown = false;
 
+    public float topBound=14f;
+    public float bottomBound=-0.5f;
+    public float leftBound =-267f;
+    public float rightBound=-237;
+
     public Vector3 screenPosition;
 
     public Vector3 worldPosition;
