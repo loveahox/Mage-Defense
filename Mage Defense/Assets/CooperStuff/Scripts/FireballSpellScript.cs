@@ -6,13 +6,14 @@ public class FireballSpellScript : MonoBehaviour
 {
 
     mobScript mS;
-    public float damage = 20;
+    public float damage = 15;
+    private bool doneDamage = false;
 
     // Start is called before the first frame update
     void Start()
     {
 
-        mS = FindObjectOfType<mobScript>();
+        //mS = FindObjectOfType<mobScript>();
         Destroy(gameObject, 1f);
     }
 
@@ -20,8 +21,12 @@ public class FireballSpellScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            
-            mS.doDamage(damage);
+
+            if (!doneDamage)
+            {
+                collision.gameObject.GetComponent<mobScript>().doDamage(damage);
+                doneDamage = true;
+            }
         }
     }
 

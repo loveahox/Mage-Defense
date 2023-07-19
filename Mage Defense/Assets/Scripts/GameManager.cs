@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public float chestHealth=1000;
     public int round=1;
     public bool isSpawning = false;
-
+    public bool damage = false;
 
     //Milos
       private Animator anim;
@@ -44,20 +44,29 @@ public class GameManager : MonoBehaviour
     }
     public void attacking(float dmg)
     {
-        chestHealth -= dmg;
+        if (damage)
+        {
+            chestHealth -= dmg;
+            damage = false;
+        }
     }
     public void spawnEnemies(int round)
     {
         if (!isSpawning)
         {
-            for (int count = 0; count < round + 1; count++)
+            if(round<=3)
             {
-                spawnMob("Goblin");
-                StartCoroutine(wait());
-                spawnMob("Orc");
-                StartCoroutine(wait());
-                spawnMob("Spider");
+                for (int count = 0; count < round*3; count++)
+                {
+                    spawnMob("Goblin");
+                    StartCoroutine(wait());
+                }
             }
+            else
+            {
+                textElement.text = "gameover!";
+            }
+            
         }
     }
     public void spawnMob(string mobName)
@@ -88,6 +97,6 @@ public class GameManager : MonoBehaviour
             round++;
             spawnEnemies(round);
         }
-        textElement.text = "Health: " + chestHealth;
+        textElement.text = "Health: " + chestHealth+" Wave: "+round;
     }
 }

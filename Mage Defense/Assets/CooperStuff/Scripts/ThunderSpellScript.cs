@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class ThunderSpellScript : MonoBehaviour
 {
-    public float damage=25;
-    mobScript mS;
+    public float damage=10;
+    private bool doneDamage = false;
+    //mobScript mS;
     // Start is called before the first frame update
     void Start()
     {
-        mS = FindObjectOfType<mobScript>();
+        //mS = FindObjectOfType<mobScript>();
         Destroy(gameObject, 1f);
     }
 
@@ -17,7 +18,11 @@ public class ThunderSpellScript : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Enemy"))
         {
-            mS.doDamage(damage);
+            if (!doneDamage)
+            {
+                collision.gameObject.GetComponent<mobScript>().doDamage(damage);
+                doneDamage = true;
+            }
         }
     }
 

@@ -8,7 +8,7 @@ public class mobScript : MonoBehaviour
     public float damage = 25;
     public NavMeshAgent agent;
     public float damageSpeed = .5f;
-    private Vector3 endLocation = new Vector3(-264f, -23.4f, -.9f);
+    private Vector3 endLocation = new Vector3(-279f, -23.7f, -.9f);
     bool isAttacking = false;
     goblinAttack gAttack;
     orkAttack oAttack;
@@ -24,6 +24,7 @@ public class mobScript : MonoBehaviour
     }
     void Start()
     {
+        StartCoroutine(wait());
         Originalspeed = agent.speed;
         gAttack = GetComponent<goblinAttack>();
         agent.SetDestination(endLocation);
@@ -51,6 +52,7 @@ public class mobScript : MonoBehaviour
                 gAttack.playAnim();
             }
             GameManager.gm.attacking(damage);
+            print("attacked");
             StartCoroutine(wait());
         }
     }
@@ -84,9 +86,12 @@ public class mobScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (agent.remainingDistance < 1)
+        if (agent.remainingDistance < 14 && health>0)
         {
-             attack();
+
+            GameManager.gm.damage = true;
+            attack();
+
         }
 
     }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class EarthquakeSpellScript : MonoBehaviour
 {
-    mobScript mS;
-    public float damage=10;
+    public float damage=5;
+    private bool doneDamage = false;
     // Start is called before the first frame update
     void Start()
     {
-        mS = FindObjectOfType<mobScript>();
+        //mS = FindObjectOfType<mobScript>();
         Destroy(gameObject, 1f);
     }
 
@@ -17,8 +17,12 @@ public class EarthquakeSpellScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            mS.doDamage(damage);
-        }
+            if (!doneDamage)
+            { 
+                collision.gameObject.GetComponent<mobScript>().doDamage(damage);
+                doneDamage = true;
+            }
+         }
     }
 
     // Update is called once per frame
