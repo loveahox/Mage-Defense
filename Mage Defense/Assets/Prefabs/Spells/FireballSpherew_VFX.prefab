@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 5277612477623643325}
   - component: {fileID: 684396174451633909}
   - component: {fileID: 5486106725841222922}
-  - component: {fileID: 2072301702341706501}
+  - component: {fileID: -3247228623069078743}
   m_Layer: 0
   m_Name: FireballSpherew_VFX
-  m_TagString: Untagged
+  m_TagString: FireballSpell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +116,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &2072301702341706501
+--- !u!114 &-3247228623069078743
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 1801683578527727381}
   - component: {fileID: 9002303866524931586}
   - component: {fileID: 264144095835086544}
-  - component: {fileID: -1950034537067006988}
   - component: {fileID: -8551575705832770397}
+  - component: {fileID: 2572157747605384364}
   m_Layer: 0
   m_Name: earthquakew_VFX
-  m_TagString: Untagged
+  m_TagString: EarthSpell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,19 +100,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-1950034537067006988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5068302304196829973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ffebf5ed44d34351bcfa4edcbcb463f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 5
 --- !u!54 &-8551575705832770397
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,6 +116,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &2572157747605384364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5068302304196829973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ffebf5ed44d34351bcfa4edcbcb463f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
 --- !u!1001 &4492433527039740708
 PrefabInstance:
   m_ObjectHideFlags: 0

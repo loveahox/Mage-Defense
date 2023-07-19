@@ -17,7 +17,63 @@ public class mobScript : MonoBehaviour
     public bool slowed = false;
     public float slowedDuration = 1f;
     public float slowedCountdownRate = 2f;
+    public bool doneThunderDamage = false;
+    public bool doneFireballDamage = false;
+    public bool doneEarthDamage = false;
+
+    public float thunderDamage = 15f;
+    public float fireballDamage = 10f;
+    public float earthDamage = 5f;
     // Start is called before the first frame update
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("ThunderSpell"))
+        {
+            if (!doneThunderDamage)
+            {
+                doDamage(thunderDamage);
+                doneThunderDamage = true;
+            }
+        }
+        if (collision.gameObject.CompareTag("FireballSpell"))
+        {
+            if (!doneFireballDamage)
+            {
+                doDamage(fireballDamage);
+                doneFireballDamage = true;
+            }
+        }
+        if (collision.gameObject.CompareTag("EarthSpell"))
+        {
+            if (!doneEarthDamage)
+            {
+                doDamage(earthDamage);
+                doneEarthDamage = true;
+            }
+        }
+        if (collision.gameObject.CompareTag("Sticky") && !slowed)
+        {
+            agent.speed = Originalspeed -= 2;
+            slowed = true;
+            SlowedCountdown();
+            slowedDuration = 1f;
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("ThunderSpell"))
+        {
+            doneThunderDamage = false;
+        }
+        if (collision.gameObject.CompareTag("FireballSpell"))
+        {
+            doneFireballDamage = false;
+        }
+        if (collision.gameObject.CompareTag("EarthSpell"))
+        {
+            doneEarthDamage = false;
+        }
+    }
     public void doDamage(float num)
     {
         health -= num;
@@ -56,16 +112,7 @@ public class mobScript : MonoBehaviour
             StartCoroutine(wait());
         }
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Sticky") && !slowed)
-        {
-            agent.speed=Originalspeed-=2;
-            slowed = true;
-            SlowedCountdown();
-            slowedDuration = 1f;
-        }
-    }
+    
     void SlowedCountdown()
     {
         if (slowed)

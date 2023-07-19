@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Sticky
+  - EarthSpell
+  - FireballSpell
+  - ThunderSpell
   layers:
   - Default
   - TransparentFX

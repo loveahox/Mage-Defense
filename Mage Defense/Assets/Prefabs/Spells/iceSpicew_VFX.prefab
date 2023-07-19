@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 9060185807390734021}
   - component: {fileID: 5305874698350852603}
   - component: {fileID: 3966592157579373980}
-  - component: {fileID: 572985846048654644}
   - component: {fileID: 4682637003802135543}
+  - component: {fileID: 2857932037582094360}
   m_Layer: 0
   m_Name: iceSpicew_VFX
-  m_TagString: Untagged
+  m_TagString: ThunderSpell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,19 +100,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &572985846048654644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6750226273844839062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6756b87f5c334393bfac4665479a062, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
 --- !u!54 &4682637003802135543
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,6 +116,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &2857932037582094360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6750226273844839062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6756b87f5c334393bfac4665479a062, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1001 &2642539436903573287
 PrefabInstance:
   m_ObjectHideFlags: 0

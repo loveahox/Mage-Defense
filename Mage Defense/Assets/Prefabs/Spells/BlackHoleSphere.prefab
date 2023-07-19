@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6601012163065243794}
   - component: {fileID: 3297265722945169572}
   - component: {fileID: 23270169614058478}
-  - component: {fileID: 3463292511122509238}
   m_Layer: 0
   m_Name: BlackHoleSphere
   m_TagString: Untagged
@@ -99,18 +98,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3463292511122509238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7715576932218792794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6891f31a7402e4398a9dba5cfc95335a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8820480525966469355
 PrefabInstance:
   m_ObjectHideFlags: 0
