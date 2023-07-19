@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public bool damage = false;
 
     //Milos
-      private Animator anim;
+    private Animator anim;
     public ParticleSystem fireballParticle;
      private AudioSource audioSource;
 
@@ -84,6 +84,9 @@ public class GameManager : MonoBehaviour
             Instantiate(Orc, spawnLocation, Quaternion.identity);
         }
     }
+
+    //VFX
+
     // Update is called once per frame
     void Update()
     {
