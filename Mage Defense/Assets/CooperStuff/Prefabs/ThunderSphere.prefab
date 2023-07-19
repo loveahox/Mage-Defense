@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 6750226273844839062}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.85843587, y: -1.2632948, z: -2.4221816}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -111,7 +111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6756b87f5c334393bfac4665479a062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 6556618798379579260, guid: d1f59bac2277a45b4a3b12f290e95aea, type: 3}
 --- !u!54 &4682637003802135543
 Rigidbody:
   m_ObjectHideFlags: 0

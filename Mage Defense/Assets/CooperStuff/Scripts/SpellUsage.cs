@@ -9,26 +9,26 @@ public class SpellUsage : MonoBehaviour
     public GameObject earthquakeSpellPrefab;
     public GameObject glueTowerPrefab;
 
-    public float lightningCooldown = 1f;
+    public float lightningCooldown = 0f;
     public float lightningCooldownRate = 5f;
     public bool isLightningCooldown = false;
 
-    public float fireballCooldown = 1f;
+    public float fireballCooldown = 0f;
     public float fireballCooldownRate = 5f;
     public bool isFireballCooldown = false;
 
-    public float earthquakeCooldown = 1f;
+    public float earthquakeCooldown = 0f;
     public float earthquakeCooldownRate = 5f;
     public bool isEarthquakeCooldown = false;
 
-    public float glueCooldown = 1f;
+    public float glueCooldown = 0f;
     public float glueCooldownRate = 5f;
     public bool isGlueCooldown = false;
 
     public float topBound=14f;
     public float bottomBound=-0.5f;
     public float leftBound =-267f;
-    public float rightBound=-237;
+    public float rightBound=-237f;
 
     public Vector3 screenPosition;
 
@@ -44,7 +44,7 @@ public class SpellUsage : MonoBehaviour
     //FIX ROTATION AND DEPTH
     void PlaceGlue()
     {
-        if (Input.GetKeyDown(KeyCode.R) && worldPosition.x < 5 && worldPosition.x > -5 && worldPosition.z < 5 && worldPosition.z > -5 && !isGlueCooldown)
+        if (Input.GetKeyDown(KeyCode.R) && !isGlueCooldown)
         {
             Instantiate(glueTowerPrefab, worldPosition, /*ROTATION GOES HERE PLEASE FIX IT*/ glueTowerPrefab.transform.rotation);
             isGlueCooldown = true;
@@ -64,7 +64,7 @@ public class SpellUsage : MonoBehaviour
 
     void CastLightning()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && worldPosition.x < 5 && worldPosition.x > -5 && worldPosition.z < 5 && worldPosition.z > -5 && !isLightningCooldown)
+        if (Input.GetKeyDown(KeyCode.Q) && !isLightningCooldown)
         {
             Instantiate(lightningSpellPrefab, worldPosition, lightningSpellPrefab.transform.rotation);
             isLightningCooldown = true;
@@ -82,7 +82,7 @@ public class SpellUsage : MonoBehaviour
     }
     void CastFireball()
     {
-        if (Input.GetKeyDown(KeyCode.W) && worldPosition.x < 5 && worldPosition.x > -5 && worldPosition.z < 5 && worldPosition.z > -5 && !isFireballCooldown)
+        if (Input.GetKeyDown(KeyCode.W) && !isFireballCooldown)
         {
             Instantiate(fireballSpellPrefab, worldPosition, fireballSpellPrefab.transform.rotation);
             isFireballCooldown = true;
@@ -100,7 +100,7 @@ public class SpellUsage : MonoBehaviour
     }
     void CastEarthquake()
     {
-        if (Input.GetKeyDown(KeyCode.E) && worldPosition.x < 5 && worldPosition.x > -5 && worldPosition.z < 5 && worldPosition.z > -5 && !isEarthquakeCooldown)
+        if (Input.GetKeyDown(KeyCode.E) && !isEarthquakeCooldown)
         {
             Instantiate(earthquakeSpellPrefab, worldPosition, earthquakeSpellPrefab.transform.rotation);
             isEarthquakeCooldown = true;

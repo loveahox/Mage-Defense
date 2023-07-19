@@ -955,13 +955,13 @@ MonoBehaviour:
   glueCooldown: 1
   glueCooldownRate: 5
   isGlueCooldown: 0
-  topBound: 14
-  bottomBound: -0.5
-  leftBound: -267
-  rightBound: -237
+  topBound: 22
+  bottomBound: -9
+  leftBound: -290
+  rightBound: -219
   screenPosition: {x: 0, y: 0, z: 0}
   worldPosition: {x: 0, y: 0, z: 0}
-  screenPositionDepth: 44
+  screenPositionDepth: 95.7
 --- !u!4 &685919016
 Transform:
   m_ObjectHideFlags: 0
