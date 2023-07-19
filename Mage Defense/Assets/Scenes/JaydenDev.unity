@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1288,7 +1288,16 @@ MonoBehaviour:
   round: 1
   isSpawning: 0
   damage: 0
-  musics: []
+  musics:
+  - musicID: Main
+    clip: {fileID: 8300000, guid: e85729063dc0f7442af62f9260b08525, type: 3}
+    source: {fileID: 0}
+  - musicID: Game
+    clip: {fileID: 8300000, guid: 0fdd3e87edbec164783388f74b757187, type: 3}
+    source: {fileID: 0}
+  - musicID: Game Over
+    clip: {fileID: 8300000, guid: 12443000b4e46d24fb0dfc27743fccad, type: 3}
+    source: {fileID: 0}
   fireballClip: {fileID: 0}
   iceSpikesClip: {fileID: 0}
   earthquakeClip: {fileID: 0}
