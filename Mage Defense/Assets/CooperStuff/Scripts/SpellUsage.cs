@@ -13,13 +13,18 @@ public class SpellUsage : MonoBehaviour
     public float lightningCooldownRate = 5f;
     public bool isLightningCooldown = false;
 
+   
+
     public float fireballCooldown = 0f;
     public float fireballCooldownRate = 5f;
     public bool isFireballCooldown = false;
 
+    
     public float earthquakeCooldown = 0f;
     public float earthquakeCooldownRate = 5f;
     public bool isEarthquakeCooldown = false;
+
+    
 
     public float glueCooldown = 0f;
     public float glueCooldownRate = 5f;
@@ -36,11 +41,21 @@ public class SpellUsage : MonoBehaviour
 
     public float screenPositionDepth = 44f;
 
+    //SFX
+
+    public AudioClip fireballClip;
+    public AudioClip iceSpikesClip;
+    public AudioClip earthquakeClip;
+    public AudioClip blackHoleClip;
+
+    private AudioSource audioSource;
+
     // Start is called before the first frame updat
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
+    
     //FIX ROTATION AND DEPTH
     void PlaceGlue()
     {
@@ -67,8 +82,10 @@ public class SpellUsage : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q) && !isLightningCooldown)
         {
             Instantiate(lightningSpellPrefab, worldPosition, lightningSpellPrefab.transform.rotation);
+            audioSource.PlayOneShot(iceSpikesClip , 1f);
             isLightningCooldown = true;
             lightningCooldown = 1;
+
         }
         if(isLightningCooldown)
         {
@@ -85,6 +102,7 @@ public class SpellUsage : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) && !isFireballCooldown)
         {
             Instantiate(fireballSpellPrefab, worldPosition, fireballSpellPrefab.transform.rotation);
+            audioSource.PlayOneShot(fireballClip, 1f);
             isFireballCooldown = true;
             fireballCooldown = 1f;
         }
@@ -103,6 +121,7 @@ public class SpellUsage : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && !isEarthquakeCooldown)
         {
             Instantiate(earthquakeSpellPrefab, worldPosition, earthquakeSpellPrefab.transform.rotation);
+            audioSource.PlayOneShot(earthquakeClip , 1f);
             isEarthquakeCooldown = true;
             earthquakeCooldown = 1f;
         }
