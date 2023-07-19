@@ -19,10 +19,6 @@ public class mobScript : MonoBehaviour
         gAttack = GetComponent<goblinAttack>();
         agent.SetDestination(endLocation);
     }
-    public void OnMouseDown()
-    {
-        Destroy(gameObject);
-    }
     IEnumerator wait()
     {
         isAttacking = true;
@@ -53,6 +49,10 @@ public class mobScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(health<=0)
+        {
+            Destroy(gameObject);
+        }
         if(agent.remainingDistance<1)
         {
             attack();
