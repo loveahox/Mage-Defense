@@ -35,6 +35,14 @@ public class SpellUsage : MonoBehaviour
     public float leftBound =-267f;
     public float rightBound=-237f;
 
+    //sfx
+    public AudioClip fireballClip;
+    public AudioClip iceSpikesClip;
+    public AudioClip earthquakeClip;
+    public AudioClip blackHoleClip;
+    
+    private AudioSource audioSource;
+
     public Vector3 screenPosition;
 
     public Vector3 worldPosition;
@@ -44,7 +52,7 @@ public class SpellUsage : MonoBehaviour
     // Start is called before the first frame updat
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
     //FIX ROTATION AND DEPTH
     void PlaceGlue()
@@ -72,6 +80,7 @@ public class SpellUsage : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q) && !isLightningCooldown)
         {
             Instantiate(lightningSpellPrefab, worldPosition, lightningSpellPrefab.transform.rotation);
+            audioSource.PlayOneShot(iceSpikesClip , 1f);
             isLightningCooldown = true;
             lightningCooldown = 1;
         }
@@ -90,6 +99,7 @@ public class SpellUsage : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) && !isFireballCooldown)
         {
             Instantiate(fireballSpellPrefab, worldPosition, fireballSpellPrefab.transform.rotation);
+            audioSource.PlayOneShot(fireballClip, 1f);
             isFireballCooldown = true;
             fireballCooldown = 1f;
         }
@@ -108,6 +118,7 @@ public class SpellUsage : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && !isEarthquakeCooldown)
         {
             Instantiate(earthquakeSpellPrefab, worldPosition, earthquakeSpellPrefab.transform.rotation);
+            audioSource.PlayOneShot(earthquakeClip , 1f);
             isEarthquakeCooldown = true;
             earthquakeCooldown = 1f;
         }
@@ -126,6 +137,7 @@ public class SpellUsage : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A) && !isBlackHoleCooldown)
         {
             Instantiate(blackHoleSpellPrefab, worldPosition, blackHoleSpellPrefab.transform.rotation);
+            audioSource.PlayOneShot(blackHoleClip , 1f);
             isBlackHoleCooldown = true;
             blackHoleCooldown = 1f;
         }
