@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     //for text
     public Text textElement;
 
+    
+    public HealthBarScript SN;
+
     //
     public static GameManager gm;
     private int enemyCount;
@@ -53,6 +56,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+        SN.SetMaxHealth(chestHealth);
+
         sU = FindObjectOfType<SpellUsage>();
 
         gm = this;
@@ -73,7 +79,9 @@ public class GameManager : MonoBehaviour
         {
             chestHealth -= dmg;
             damage = false;
+            SN.SetHealth(chestHealth);
         }
+
     }
     public IEnumerator spawnEnemies(int round)
     {
