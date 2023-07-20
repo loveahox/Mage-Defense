@@ -143,6 +143,7 @@ public class mobScript : MonoBehaviour
     {
         if (health <= 0)
         {
+            GameManager.gm.addCoins(2);
             Destroy(gameObject);
         }
         if (agent.remainingDistance < 7 && health>0)
