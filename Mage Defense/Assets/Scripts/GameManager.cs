@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     //for text
     public Text textElement;
+    public GameObject loseScreen;
+
     //
     public static GameManager gm;
     private int enemyCount;
@@ -52,7 +54,7 @@ public class GameManager : MonoBehaviour
         chestHealth = 1000;
 
         //Game Over screen
-        //loseScreen.SetActive(false);
+        loseScreen.SetActive(false);
 
         //audio
         ChangeMusic("Game");
@@ -110,7 +112,7 @@ public class GameManager : MonoBehaviour
     {
         if(chestHealth<=0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GameOver();
         }
         enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
         if(enemyCount==0)
@@ -166,9 +168,10 @@ public class GameManager : MonoBehaviour
 
     }
 
-    //*Game Over
-    //public void GameOver()
-   // {
-   // loseScreen.SetActive(true);
-    //}
+    //*Game Over  SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    public void GameOver()
+    {
+    SceneManager.LoadScene("GameOver");
+    
+    }
 }
