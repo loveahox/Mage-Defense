@@ -20,9 +20,11 @@ public class mobScript : MonoBehaviour
     public bool doneThunderDamage = false;
     public bool doneFireballDamage = false;
     public bool doneEarthDamage = false;
+    public bool doneBlackHoleDamage = false;
 
-    public float thunderDamage = 15f;
-    public float fireballDamage = 10f;
+    public float blackHoleDamage = 20f;
+    public float thunderDamage = 10f;
+    public float fireballDamage = 7f;
     public float earthDamage = 5f;
     // Start is called before the first frame update
     private void OnCollisionEnter(Collision collision)
@@ -49,6 +51,14 @@ public class mobScript : MonoBehaviour
             {
                 doDamage(earthDamage);
                 doneEarthDamage = true;
+            }
+        }
+        if (collision.gameObject.CompareTag("BlackHoleSpell"))
+        {
+            if (!doneBlackHoleDamage)
+            {
+                doDamage(blackHoleDamage);
+                doneBlackHoleDamage = true;
             }
         }
         if (collision.gameObject.CompareTag("Sticky") && !slowed)

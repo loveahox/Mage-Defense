@@ -23,7 +23,7 @@ public class SpellUsage : MonoBehaviour
     public bool isEarthquakeCooldown = false;
 
     public float blackHoleCooldown = 0f;
-    public float blackHoleCooldownRate = 5f;
+    public float blackHoleCooldownRate = 15f;
     public bool isBlackHoleCooldown = false;
 
     public float glueCooldown = 0f;
