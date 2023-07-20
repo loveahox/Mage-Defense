@@ -13,6 +13,9 @@ public class GlueGunnerScript : MonoBehaviour
     public GameObject targetObj;
     public Transform target;
 
+    public bool firing = false;
+    public bool alreadyTargeting = false;
+    
 
     public bool firing = false;
     public bool alreadyTargeting = false;
@@ -32,11 +35,8 @@ public class GlueGunnerScript : MonoBehaviour
     void Update()
     {
 
-
         target = targetObj.transform;
-
         
-
         transform.LookAt(target);
 
         

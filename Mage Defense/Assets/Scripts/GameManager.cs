@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
 {
     //for text
     public Text textElement;
-    public GameObject loseScreen;
 
     //
     public static GameManager gm;
@@ -62,7 +61,6 @@ public class GameManager : MonoBehaviour
 
 
         //Game Over screen
-        loseScreen.SetActive(false);
 
         //audio
         ChangeMusic("Game");
