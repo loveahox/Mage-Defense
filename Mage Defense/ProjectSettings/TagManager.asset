@@ -9,6 +9,11 @@ TagManager:
   - EarthSpell
   - FireballSpell
   - ThunderSpell
+  - BlackHoleSpell
+  - BlackHoleSpellRefresher
+  - ThunderSpellRefresher
+  - FireballSpellRefresher
+  - EarthquakeSpellRefresher
   layers:
   - Default
   - TransparentFX

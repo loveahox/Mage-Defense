@@ -6728,6 +6728,14 @@ MonoBehaviour:
   slowed: 0
   slowedDuration: 1
   slowedCountdownRate: 2
+  doneThunderDamage: 0
+  doneFireballDamage: 0
+  doneEarthDamage: 0
+  doneBlackHoleDamage: 0
+  blackHoleDamage: 20
+  thunderDamage: 10
+  fireballDamage: 7
+  earthDamage: 5
 --- !u!114 &1868615761538503827
 MonoBehaviour:
   m_ObjectHideFlags: 0

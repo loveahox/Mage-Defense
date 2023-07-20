@@ -51,10 +51,14 @@ public class GameManager : MonoBehaviour
         spawnEnemies(round);
         chestHealth = 1000;
 
+        //Game Over screen
+        //loseScreen.SetActive(false);
+
         //audio
-        ChangeMusic("Main");
+        ChangeMusic("Game");
         audioSource = GetComponent<AudioSource>();
     }
+
     public void attacking(float dmg)
     {
         if (damage)
@@ -99,6 +103,7 @@ public class GameManager : MonoBehaviour
     }
 
     //VFX
+
 
     // Update is called once per frame
     void Update()
@@ -160,4 +165,10 @@ public class GameManager : MonoBehaviour
 
 
     }
+
+    //*Game Over
+    //public void GameOver()
+   // {
+   // loseScreen.SetActive(true);
+    //}
 }
