@@ -45,10 +45,11 @@ public class GameManager : MonoBehaviour
     public GameObject Orc;
     public GameObject Spider;
     public Vector3 spawnLocation = new Vector3(-233f, -23.4f, 28.42f);
-    public float coins;
-
+    public float coins = 0;
+    
     public void addCoins(float coins)
     {
+
         this.coins += coins;
     }
     IEnumerator wait1()
