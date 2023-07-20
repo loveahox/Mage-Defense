@@ -61,6 +61,7 @@ public class SpellUsage : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
     }
+<<<<<<< Updated upstream
     IEnumerator ThunderSpellRefresher()
     {
         yield return new WaitForSeconds(1f);
@@ -80,6 +81,15 @@ public class SpellUsage : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         Instantiate(blackHoleSpellRefresherPrefab, worldPosition, blackHoleSpellRefresherPrefab.transform.rotation);
+=======
+    public void resetCooldowns()
+    {
+        lightningCooldown = 0f;
+        fireballCooldown = 0f;
+        earthquakeCooldown = 0f;
+        blackHoleCooldown = 0f;
+        glueCooldown = 0f;
+>>>>>>> Stashed changes
     }
     //FIX ROTATION AND DEPTH
     void PlaceGlue()

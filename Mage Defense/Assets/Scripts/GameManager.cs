@@ -10,10 +10,13 @@ public class GameManager : MonoBehaviour
     //
     public static GameManager gm;
     private int enemyCount;
+    SpellUsage sU;
     public float chestHealth=1000;
     public int round=1;
     public bool isSpawning = false;
     public bool damage = false;
+    public bool inProgress = false;
+    private bool finishedSpawn = true;
 
     //VFX
     private Animator anim;
@@ -38,18 +41,23 @@ public class GameManager : MonoBehaviour
     public GameObject Spider;
     public Vector3 spawnLocation = new Vector3(-233f, -23.4f, 28.42f);
 
-    IEnumerator wait()
+    IEnumerator wait1()
     {
+        print("coro");
         isSpawning = true;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         isSpawning = false;
+        finishedSpawn = true;
     }
     // Start is called before the first frame update
     void Start()
     {
+        sU = FindObjectOfType<SpellUsage>();
+
         gm = this;
         spawnEnemies(round);
         chestHealth = 1000;
+        finishedSpawn = true;
 
         //Game Over screen
         //loseScreen.SetActive(false);
@@ -67,24 +75,79 @@ public class GameManager : MonoBehaviour
             damage = false;
         }
     }
-    public void spawnEnemies(int round)
+    public IEnumerator spawnEnemies(int round)
     {
         if (!isSpawning)
         {
-            if(round<=3)
+            inProgress = true;
+            if (round <= 3)
             {
-                for (int count = 0; count < round*3; count++)
+                for (int count = 0; count < round * 3; count ++)
                 {
+                    
                     spawnMob("Goblin");
-                    StartCoroutine(wait());
+                    yield return new WaitForSeconds(1);
+                    
                 }
             }
-            else
+            else if (round > 3 && round <= 14)
             {
-                textElement.text = "gameover!";
+                for (int count = 0; count < round * 2; count++)
+                {
+                    spawnMob("Goblin");
+                    yield return new WaitForSeconds(1);
+                }
+                while (enemyCount != 0)
+                {
+                    yield return null;
+                }
+                    for (int count = 0; count < round; count++)
+                    {
+                        spawnMob("Spider");
+                        yield return new WaitForSeconds(1);
+                    }
+                
             }
-            
-        }
+            else if (round == 15)
+            {
+                for (int count = 0; count < 12; count++)
+                {
+                    spawnMob("Goblin");
+                    yield return new WaitForSeconds(1);
+                }
+                while (enemyCount != 0)
+                {
+                    yield return null;
+                }
+                    for (int count = 0; count < 10; count++)
+                    {
+                        spawnMob("Goblin");
+                        yield return new WaitForSeconds(1);
+                        yield return new WaitForSeconds(1);
+                        spawnMob("Spider");
+                    }
+                }
+                if (enemyCount == 0)
+                {
+                    for (int count = 0; count < 10; count++)
+                    {
+                        spawnMob("Goblin");
+                        yield return new WaitForSeconds(1);
+                    }
+                    spawnMob("Orc");
+                    yield return new WaitForSeconds(1);
+                    spawnMob("Orc");
+                }
+                else
+                {
+                    if (round == 16)
+                    {
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    }
+                }
+              
+            }
+            inProgress = false;
     }
     public void spawnMob(string mobName)
     {
@@ -113,12 +176,14 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        if(enemyCount==0)
+        
+        if(enemyCount==0 && !inProgress)
         {
             round++;
-            spawnEnemies(round);
+            sU.resetCooldowns();
+            StartCoroutine(spawnEnemies(round));
         }
-        textElement.text = "Health: " + chestHealth+" Wave: "+round;
+        textElement.text = "Health: " + chestHealth+" Wave: "+ round;
     }
 
     //SFX

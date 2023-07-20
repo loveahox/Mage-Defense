@@ -1428,6 +1428,7 @@ MonoBehaviour:
   round: 1
   isSpawning: 0
   damage: 0
+  inProgress: 0
   musics:
   - musicID: Main
     clip: {fileID: 8300000, guid: e85729063dc0f7442af62f9260b08525, type: 3}
@@ -2859,8 +2860,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950988016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.1, y: -67.6, z: 9.4202}
-  m_LocalScale: {x: 12.161234, y: 0.3057, z: -5.793284}
+  m_LocalPosition: {x: 8.6631, y: -67.6, z: 19.2988}
+  m_LocalScale: {x: 31.073498, y: 0.3057, z: -25.549545}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1705436640}
