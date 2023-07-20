@@ -81,6 +81,13 @@ public class SpellUsage : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Instantiate(blackHoleSpellRefresherPrefab, worldPosition, blackHoleSpellRefresherPrefab.transform.rotation);
     }
+    public void resetCooldowns()
+    {
+        lightningCooldown = 0f;
+        fireballCooldown = 0f;
+        earthquakeCooldown = 0f;
+        glueCooldown = 0f;
+    }
     //FIX ROTATION AND DEPTH
     void PlaceGlue()
     {
