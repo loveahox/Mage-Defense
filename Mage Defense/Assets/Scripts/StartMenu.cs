@@ -23,5 +23,6 @@ using UnityEngine.UI;
     public void exitGame()
     {
         Application.Quit();
+        
     }
 }
