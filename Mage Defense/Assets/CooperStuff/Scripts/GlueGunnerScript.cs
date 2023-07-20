@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,10 +15,7 @@ public class GlueGunnerScript : MonoBehaviour
 
     public bool firing = false;
     public bool alreadyTargeting = false;
-    
 
-    public bool firing = false;
-    public bool alreadyTargeting = false;
 
 
     // Start is called before the first frame update

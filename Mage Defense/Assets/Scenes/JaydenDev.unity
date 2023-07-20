@@ -630,6 +630,62 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ed696beff2ac69f4f8fd997b1ca05fcb, type: 3}
   m_PrefabInstance: {fileID: 364372076}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &419351744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 419351746}
+  - component: {fileID: 419351745}
+  m_Layer: 0
+  m_Name: MusicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &419351745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419351744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b13cab5ffb974d54688d4b3433635b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musics:
+  - musicID: Main
+    clip: {fileID: 8300000, guid: 0fdd3e87edbec164783388f74b757187, type: 3}
+    source: {fileID: 0}
+  fireballClip: {fileID: 0}
+  iceSpikesClip: {fileID: 0}
+  earthquakeClip: {fileID: 0}
+  blackHoleClip: {fileID: 0}
+  explosionParticle: {fileID: 0}
+  blackHoleParticle: {fileID: 0}
+  iceSpicePatricle: {fileID: 0}
+  earthquakeParticle: {fileID: 0}
+--- !u!4 &419351746
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419351744}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -235.34268, y: -18.317158, z: 30.174635}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &508389379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1289,7 +1345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textElement: {fileID: 525770007}
   chestHealth: 1000
-  round: 1
+  round: 0
   isSpawning: 0
   damage: 0
   inProgress: 0

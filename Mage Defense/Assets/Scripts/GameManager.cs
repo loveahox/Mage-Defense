@@ -61,9 +61,10 @@ public class GameManager : MonoBehaviour
         finishedSpawn = true;
 
         //Game Over screen
+        
 
         //audio
-        ChangeMusic("Game");
+        
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -194,6 +195,7 @@ public class GameManager : MonoBehaviour
         {
             m.source = gameObject.AddComponent<AudioSource>();
             m.source.clip = m.clip;
+           
         }
     }
 
@@ -222,6 +224,7 @@ public class GameManager : MonoBehaviour
             if (m.musicID == currentMusicID)
             {
                 m.source.Play();
+                audioSource.loop = true;
                 break;
             }
 
