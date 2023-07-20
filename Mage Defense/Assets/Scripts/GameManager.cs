@@ -15,16 +15,16 @@ public class GameManager : MonoBehaviour
     public static GameManager gm;
     private int enemyCount;
     SpellUsage sU;
-    public float chestHealth=1000;
-    public int round=0;
+    public float chestHealth = 1000;
+    public int round = 0;
     public bool isSpawning = false;
     public bool damage = false;
     public bool inProgress = false;
-    private bool finishedSpawn = true;
+
 
     //VFX
     private Animator anim;
-    
+
     //SFX
     private AudioSource audioSource;
 
@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
         isSpawning = true;
         yield return new WaitForSeconds(1);
         isSpawning = false;
-        finishedSpawn = true;
+
     }
     // Start is called before the first frame update
     void Start()
@@ -59,17 +59,20 @@ public class GameManager : MonoBehaviour
         
         SN.SetMaxHealth(chestHealth);
 
+
+        spawnEnemies(round);
+
         sU = FindObjectOfType<SpellUsage>();
 
         gm = this;
-        spawnEnemies(round);
         chestHealth = 1000;
-        finishedSpawn = true;
+
 
         //Game Over screen
+        
 
         //audio
-        ChangeMusic("Game");
+        
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -90,15 +93,15 @@ public class GameManager : MonoBehaviour
             inProgress = true;
             if (round <= 3)
             {
-                for (int count = 0; count < round * 3; count ++)
+                for (int count = 0; count < round * 3; count++)
                 {
-                    
+
                     spawnMob("Goblin");
                     yield return new WaitForSeconds(1);
-                    
+
                 }
             }
-            else if (round > 3 && round <= 14)
+            else if (round > 3 && round <= 10)
             {
                 for (int count = 0; count < round * 2; count++)
                 {
@@ -109,14 +112,23 @@ public class GameManager : MonoBehaviour
                 {
                     yield return null;
                 }
-                    for (int count = 0; count < round; count++)
-                    {
-                        spawnMob("Spider");
-                        yield return new WaitForSeconds(1);
-                    }
-                
+                for (int count = 0; count < round; count++)
+                {
+                    spawnMob("Spider");
+                    yield return new WaitForSeconds(1);
+                }
+
             }
-            else if (round == 15)
+            else if (round > 10 && round < 15)
+            {
+                for (int count = 0; count < round * 2; count++)
+                {
+                    spawnMob("Goblin");
+                    yield return new WaitForSeconds(1);
+                    spawnMob("Spider");
+                }
+            }
+            if (round == 15)
             {
                 for (int count = 0; count < 12; count++)
                 {
@@ -127,35 +139,32 @@ public class GameManager : MonoBehaviour
                 {
                     yield return null;
                 }
-                    for (int count = 0; count < 10; count++)
-                    {
-                        spawnMob("Goblin");
-                        yield return new WaitForSeconds(1);
-                        yield return new WaitForSeconds(1);
-                        spawnMob("Spider");
-                    }
-                }
-                if (enemyCount == 0)
+                for (int count = 0; count < 10; count++)
                 {
-                    for (int count = 0; count < 10; count++)
-                    {
-                        spawnMob("Goblin");
-                        yield return new WaitForSeconds(1);
-                    }
-                    spawnMob("Orc");
+                    spawnMob("Goblin");
                     yield return new WaitForSeconds(1);
-                    spawnMob("Orc");
+                    yield return new WaitForSeconds(1);
+                    spawnMob("Spider");
                 }
-                else
+                while (enemyCount != 0)
                 {
-                    if (round == 16)
-                    {
-                        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                    }
+                    yield return null;
                 }
-              
+                for (int count = 0; count < 10; count++)
+                {
+                    spawnMob("Goblin");
+                    yield return new WaitForSeconds(1);
+                }
+                spawnMob("Orc");
+                yield return new WaitForSeconds(1);
+                spawnMob("Orc");
+            }
+            if (round == 16)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
             inProgress = false;
+        }
     }
     public void spawnMob(string mobName)
     {
@@ -202,6 +211,7 @@ public class GameManager : MonoBehaviour
         {
             m.source = gameObject.AddComponent<AudioSource>();
             m.source.clip = m.clip;
+           
         }
     }
 
@@ -230,6 +240,7 @@ public class GameManager : MonoBehaviour
             if (m.musicID == currentMusicID)
             {
                 m.source.Play();
+                audioSource.loop = true;
                 break;
             }
 

@@ -145,7 +145,7 @@ public class mobScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (agent.remainingDistance < 14 && health>0)
+        if (agent.remainingDistance < 7 && health>0)
         {
 
             GameManager.gm.damage = true;

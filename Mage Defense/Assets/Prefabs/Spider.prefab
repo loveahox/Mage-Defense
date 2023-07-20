@@ -70,7 +70,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 4
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -98,10 +98,17 @@ MonoBehaviour:
   damage: 10
   agent: {fileID: 223595305617632689}
   damageSpeed: 0.5
-  Originalspeed: 0
   slowed: 0
   slowedDuration: 1
   slowedCountdownRate: 2
+  doneThunderDamage: 0
+  doneFireballDamage: 0
+  doneEarthDamage: 0
+  doneBlackHoleDamage: 0
+  blackHoleDamage: 20
+  thunderDamage: 10
+  fireballDamage: 7
+  earthDamage: 5
 --- !u!114 &5935934492016251687
 MonoBehaviour:
   m_ObjectHideFlags: 0

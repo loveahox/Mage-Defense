@@ -1770,6 +1770,7 @@ Animation:
   m_Animation: {fileID: 7400056, guid: 74f9929fc486842e5af54fb95d75ed0e, type: 3}
   m_Animations:
   - {fileID: 7400056, guid: 74f9929fc486842e5af54fb95d75ed0e, type: 3}
+  - {fileID: 7400016, guid: 2de911d45fd8d124c90453569b0194ca, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -1790,10 +1791,17 @@ MonoBehaviour:
   damage: 25
   agent: {fileID: 1959182278318692922}
   damageSpeed: 0.5
-  Originalspeed: 0
   slowed: 0
   slowedDuration: 1
   slowedCountdownRate: 2
+  doneThunderDamage: 0
+  doneFireballDamage: 0
+  doneEarthDamage: 0
+  doneBlackHoleDamage: 0
+  blackHoleDamage: 20
+  thunderDamage: 10
+  fireballDamage: 7
+  earthDamage: 5
 --- !u!114 &-6593080935498999783
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -78,7 +78,7 @@ public class MusicManager : MonoBehaviour
     {
         ChangeMusic("Main");
         audioSource = GetComponent<AudioSource>();
-
+        audioSource.loop = true;
     }
 
     public void fireballSFX()
