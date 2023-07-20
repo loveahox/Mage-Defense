@@ -77,7 +77,6 @@ public class MusicManager : MonoBehaviour
     void Start()
     {
         ChangeMusic("Main");
-        explosionParticle.Stop();
         audioSource = GetComponent<AudioSource>();
 
     }

@@ -7,12 +7,14 @@ public class GameManager : MonoBehaviour
 {
     //for text
     public Text textElement;
+    public GameObject loseScreen;
+
     //
     public static GameManager gm;
     private int enemyCount;
     SpellUsage sU;
     public float chestHealth=1000;
-    public int round=1;
+    public int round=0;
     public bool isSpawning = false;
     public bool damage = false;
     public bool inProgress = false;
@@ -60,7 +62,7 @@ public class GameManager : MonoBehaviour
         finishedSpawn = true;
 
         //Game Over screen
-        //loseScreen.SetActive(false);
+        loseScreen.SetActive(false);
 
         //audio
         ChangeMusic("Game");
@@ -173,7 +175,7 @@ public class GameManager : MonoBehaviour
     {
         if(chestHealth<=0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GameOver();
         }
         enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
         
@@ -231,9 +233,10 @@ public class GameManager : MonoBehaviour
 
     }
 
-    //*Game Over
-    //public void GameOver()
-   // {
-   // loseScreen.SetActive(true);
-    //}
+    //*Game Over  SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    public void GameOver()
+    {
+    SceneManager.LoadScene("GameOver");
+    
+    }
 }
