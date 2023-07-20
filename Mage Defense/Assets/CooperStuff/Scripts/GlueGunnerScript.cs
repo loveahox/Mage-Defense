@@ -13,12 +13,10 @@ public class GlueGunnerScript : MonoBehaviour
     public GameObject targetObj;
     public Transform target;
 
-<<<<<<< Updated upstream
+
     public bool firing = false;
     public bool alreadyTargeting = false;
-=======
-    
->>>>>>> Stashed changes
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,12 +31,12 @@ public class GlueGunnerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-<<<<<<< Updated upstream
+
 
         target = targetObj.transform;
-=======
+
         
->>>>>>> Stashed changes
+
         transform.LookAt(target);
 
         
