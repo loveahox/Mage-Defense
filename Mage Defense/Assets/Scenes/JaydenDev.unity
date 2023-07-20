@@ -944,12 +944,17 @@ MonoBehaviour:
   lightningSpellPrefab: {fileID: 6750226273844839062, guid: 82d445139eb2b45b493bd9d2d5d1f8ad, type: 3}
   fireballSpellPrefab: {fileID: 380440098062010103, guid: d97d738518638dc46a86095230c7e432, type: 3}
   earthquakeSpellPrefab: {fileID: 5068302304196829973, guid: 53ee9c84299e54f019d756a8421f1ee8, type: 3}
+<<<<<<< Updated upstream
   blackHoleSpellPrefab: {fileID: 7715576932218792794, guid: 11805229a1df958479b53fd68f0d0d1e, type: 3}
   glueTowerPrefab: {fileID: 1324863590907933985, guid: 2ac1619485a314a95a9c57fd82c8220b, type: 3}
   thunderSpellRefresherPrefab: {fileID: 8620652237941079599, guid: 7346da23d01ca4fc19db98c3cf63d901, type: 3}
   fireballSpellRefresherPrefab: {fileID: 71339394440212089, guid: 9482e05aff0214d33a5c0666689faeae, type: 3}
   earthquakeSpellRefresherPrefab: {fileID: 1464048998732910513, guid: 2224237948a994a9ba6aaee94b0fbddf, type: 3}
   blackHoleSpellRefresherPrefab: {fileID: 7493513625524913450, guid: ad42e88f443f944ea831d1bf2b21b5ea, type: 3}
+=======
+  blackHoleSpellPrefab: {fileID: 2486207612821780027, guid: 826b2433efd72491f8f6666db364f50e, type: 3}
+  glueTowerPrefab: {fileID: 1324863590907933985, guid: 2ac1619485a314a95a9c57fd82c8220b, type: 3}
+>>>>>>> Stashed changes
   lightningCooldown: 1
   lightningCooldownRate: 5
   isLightningCooldown: 0
@@ -960,7 +965,11 @@ MonoBehaviour:
   earthquakeCooldownRate: 5
   isEarthquakeCooldown: 0
   blackHoleCooldown: 0
+<<<<<<< Updated upstream
   blackHoleCooldownRate: 15
+=======
+  blackHoleCooldownRate: 5
+>>>>>>> Stashed changes
   isBlackHoleCooldown: 0
   glueCooldown: 1
   glueCooldownRate: 5
@@ -1259,6 +1268,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ed696beff2ac69f4f8fd997b1ca05fcb, type: 3}
   m_PrefabInstance: {fileID: 738503729}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
 --- !u!1 &764484173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1394,6 +1404,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 764484173}
   m_CullTransparentMesh: 1
+=======
+--- !u!1001 &772633319
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 120571190148097687, guid: 82d445139eb2b45b493bd9d2d5d1f8ad, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 120571190148097687, guid: 82d445139eb2b45b493bd9d2d5d1f8ad, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.85843587
+      objectReference: {fileID: 0}
+    - target: {fileID: 120571190148097687, guid: 82d445139eb2b45b493bd9d2d5d1f8ad, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.2632948
+      objectReference: {fileID: 0}
+    - target: {fileID: 120571190148097687, guid: 82d445139eb2b45b493bd9d2d5d1f8ad, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.4221816
+      objectReference: {fileID: 0}
+    - target: {fileID: 120571190148097687, guid: 82d445139eb2b45b493bd9d2d5d1f8ad, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 120571190148097687, guid: 82d445139eb2b45b493bd9d2d5d1f8ad, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 120571190148097687, guid: 82d445139eb2b45b493bd9d2d5d1f8ad, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 120571190148097687, guid: 82d445139eb2b45b493bd9d2d5d1f8ad, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 120571190148097687, guid: 82d445139eb2b45b493bd9d2d5d1f8ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 120571190148097687, guid: 82d445139eb2b45b493bd9d2d5d1f8ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 120571190148097687, guid: 82d445139eb2b45b493bd9d2d5d1f8ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6750226273844839062, guid: 82d445139eb2b45b493bd9d2d5d1f8ad, type: 3}
+      propertyPath: m_Name
+      value: ThunderSphere
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 82d445139eb2b45b493bd9d2d5d1f8ad, type: 3}
+>>>>>>> Stashed changes
 --- !u!1 &814054301
 GameObject:
   m_ObjectHideFlags: 0
