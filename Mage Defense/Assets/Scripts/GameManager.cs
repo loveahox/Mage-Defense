@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     private int enemyCount;
     SpellUsage sU;
     public float chestHealth=1000;
-    public int round=1;
+    public int round=0;
     public bool isSpawning = false;
     public bool damage = false;
     public bool inProgress = false;

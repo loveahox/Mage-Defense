@@ -61,7 +61,6 @@ public class SpellUsage : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
     }
-<<<<<<< Updated upstream
     IEnumerator ThunderSpellRefresher()
     {
         yield return new WaitForSeconds(1f);
@@ -87,7 +86,6 @@ public class SpellUsage : MonoBehaviour
         lightningCooldown = 0f;
         fireballCooldown = 0f;
         earthquakeCooldown = 0f;
-        blackHoleCooldown = 0f;
         glueCooldown = 0f;
     }
     //FIX ROTATION AND DEPTH
