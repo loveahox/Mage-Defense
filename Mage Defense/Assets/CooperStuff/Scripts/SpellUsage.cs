@@ -10,6 +10,13 @@ public class SpellUsage : MonoBehaviour
     public GameObject blackHoleSpellPrefab;
     public GameObject glueTowerPrefab;
 
+    public GameObject thunderSpellRefresherPrefab;
+    public GameObject fireballSpellRefresherPrefab;
+    public GameObject earthquakeSpellRefresherPrefab;
+    public GameObject blackHoleSpellRefresherPrefab;
+
+
+
     public float lightningCooldown = 0f;
     public float lightningCooldownRate = 5f;
     public bool isLightningCooldown = false;
@@ -54,6 +61,26 @@ public class SpellUsage : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
     }
+    IEnumerator ThunderSpellRefresher()
+    {
+        yield return new WaitForSeconds(1f);
+        Instantiate(thunderSpellRefresherPrefab, worldPosition, thunderSpellRefresherPrefab.transform.rotation);
+    }
+    IEnumerator FireballSpellRefresher()
+    {
+        yield return new WaitForSeconds(1f);
+        Instantiate(fireballSpellRefresherPrefab, worldPosition, fireballSpellRefresherPrefab.transform.rotation);
+    }
+    IEnumerator EarthquakeSpellRefresher()
+    {
+        yield return new WaitForSeconds(1f);
+        Instantiate(earthquakeSpellRefresherPrefab, worldPosition, earthquakeSpellRefresherPrefab.transform.rotation);
+    }
+    IEnumerator BlackHoleSpellRefresher()
+    {
+        yield return new WaitForSeconds(1f);
+        Instantiate(blackHoleSpellRefresherPrefab, worldPosition, blackHoleSpellRefresherPrefab.transform.rotation);
+    }
     //FIX ROTATION AND DEPTH
     void PlaceGlue()
     {
@@ -80,6 +107,7 @@ public class SpellUsage : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q) && !isLightningCooldown)
         {
             Instantiate(lightningSpellPrefab, worldPosition, lightningSpellPrefab.transform.rotation);
+            StartCoroutine(ThunderSpellRefresher());
             audioSource.PlayOneShot(iceSpikesClip , 1f);
             isLightningCooldown = true;
             lightningCooldown = 1;
@@ -99,6 +127,7 @@ public class SpellUsage : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) && !isFireballCooldown)
         {
             Instantiate(fireballSpellPrefab, worldPosition, fireballSpellPrefab.transform.rotation);
+            StartCoroutine(FireballSpellRefresher());
             audioSource.PlayOneShot(fireballClip, 1f);
             isFireballCooldown = true;
             fireballCooldown = 1f;
@@ -118,6 +147,7 @@ public class SpellUsage : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && !isEarthquakeCooldown)
         {
             Instantiate(earthquakeSpellPrefab, worldPosition, earthquakeSpellPrefab.transform.rotation);
+            StartCoroutine(EarthquakeSpellRefresher());
             audioSource.PlayOneShot(earthquakeClip , 1f);
             isEarthquakeCooldown = true;
             earthquakeCooldown = 1f;
@@ -137,6 +167,7 @@ public class SpellUsage : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A) && !isBlackHoleCooldown)
         {
             Instantiate(blackHoleSpellPrefab, worldPosition, blackHoleSpellPrefab.transform.rotation);
+            StartCoroutine(BlackHoleSpellRefresher());
             audioSource.PlayOneShot(blackHoleClip , 1f);
             isBlackHoleCooldown = true;
             blackHoleCooldown = 1f;

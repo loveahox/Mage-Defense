@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -945,6 +945,10 @@ MonoBehaviour:
   earthquakeSpellPrefab: {fileID: 5068302304196829973, guid: 53ee9c84299e54f019d756a8421f1ee8, type: 3}
   blackHoleSpellPrefab: {fileID: 7715576932218792794, guid: 11805229a1df958479b53fd68f0d0d1e, type: 3}
   glueTowerPrefab: {fileID: 1324863590907933985, guid: 2ac1619485a314a95a9c57fd82c8220b, type: 3}
+  thunderSpellRefresherPrefab: {fileID: 8620652237941079599, guid: 7346da23d01ca4fc19db98c3cf63d901, type: 3}
+  fireballSpellRefresherPrefab: {fileID: 71339394440212089, guid: 9482e05aff0214d33a5c0666689faeae, type: 3}
+  earthquakeSpellRefresherPrefab: {fileID: 1464048998732910513, guid: 2224237948a994a9ba6aaee94b0fbddf, type: 3}
+  blackHoleSpellRefresherPrefab: {fileID: 7493513625524913450, guid: ad42e88f443f944ea831d1bf2b21b5ea, type: 3}
   lightningCooldown: 1
   lightningCooldownRate: 5
   isLightningCooldown: 0

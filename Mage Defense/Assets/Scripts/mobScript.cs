@@ -68,22 +68,24 @@ public class mobScript : MonoBehaviour
             SlowedCountdown();
             slowedDuration = 1f;
         }
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        if(collision.gameObject.CompareTag("ThunderSpell"))
+        if (collision.gameObject.CompareTag("ThunderSpellRefresher"))
         {
             doneThunderDamage = false;
         }
-        if (collision.gameObject.CompareTag("FireballSpell"))
+        if (collision.gameObject.CompareTag("FireballSpellRefresher"))
         {
             doneFireballDamage = false;
         }
-        if (collision.gameObject.CompareTag("EarthSpell"))
+        if (collision.gameObject.CompareTag("EarthquakeSpellRefresher"))
         {
             doneEarthDamage = false;
         }
+        if (collision.gameObject.CompareTag("BlackHoleSpellRefresher"))
+        {
+            doneBlackHoleDamage = false;
+        }
     }
+    
     public void doDamage(float num)
     {
         health -= num;
