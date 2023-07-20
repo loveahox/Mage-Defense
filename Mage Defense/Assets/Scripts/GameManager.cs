@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 public class GameManager : MonoBehaviour
 {
     //for text
     public Text textElement;
-
+    public TextMeshProUGUI coinsValue;
     
     public HealthBarScript SN;
 
@@ -206,6 +207,7 @@ public class GameManager : MonoBehaviour
             StartCoroutine(spawnEnemies(round));
         }
         textElement.text = "Health: " + chestHealth+" Wave: "+ round;
+        coinsValue.text = "" + coins;
     }
 
     //SFX
