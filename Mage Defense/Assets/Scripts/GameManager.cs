@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
         chestHealth = 1000;
 
         //audio
-        ChangeMusic("Main");
+        ChangeMusic("Game");
         audioSource = GetComponent<AudioSource>();
     }
     public void attacking(float dmg)
