@@ -6731,6 +6731,8 @@ MonoBehaviour:
   doneThunderDamage: 0
   doneFireballDamage: 0
   doneEarthDamage: 0
+  doneBlackHoleDamage: 0
+  blackHoleDamage: 20
   thunderDamage: 10
   fireballDamage: 7
   earthDamage: 5
