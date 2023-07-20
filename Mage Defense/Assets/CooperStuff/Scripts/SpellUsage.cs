@@ -61,6 +61,7 @@ public class SpellUsage : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
     }
+
     IEnumerator ThunderSpellRefresher()
     {
         yield return new WaitForSeconds(1f);
