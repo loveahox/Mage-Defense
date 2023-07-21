@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpellUsage : MonoBehaviour
 {
@@ -56,10 +57,21 @@ public class SpellUsage : MonoBehaviour
 
     public float screenPositionDepth = 44f;
 
+    public Image fireballImage;
+    public Image iceSpikesImage;
+    public Image earthquakeImage;
+    public Image blackHoleImage1;
+    public Image blackHoleImage2;
+
     // Start is called before the first frame updat
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        iceSpikesImage.fillAmount = 0;
+        fireballImage.fillAmount = 0;
+        earthquakeImage.fillAmount = 0;
+        blackHoleImage1.fillAmount = 0;
+        blackHoleImage2.fillAmount = 0;
     }
 
     IEnumerator ThunderSpellRefresher()
@@ -98,6 +110,7 @@ public class SpellUsage : MonoBehaviour
             isGlueCooldown = true;
             glueCooldown = 1f;
             GameManager.gm.addCoins(-6);
+
         }
         if (isGlueCooldown)
         {
@@ -120,6 +133,7 @@ public class SpellUsage : MonoBehaviour
             audioSource.PlayOneShot(iceSpikesClip , 1f);
             isLightningCooldown = true;
             lightningCooldown = 1;
+            iceSpikesImage.fillAmount = 1;
         }
         if(isLightningCooldown)
         {
@@ -128,6 +142,11 @@ public class SpellUsage : MonoBehaviour
             {
                 lightningCooldown = 0f;
                 isLightningCooldown = false;
+            }
+            iceSpikesImage.fillAmount -= 1 / lightningCooldownRate * Time.deltaTime;
+            if(iceSpikesImage.fillAmount <= 0f)
+            {
+                iceSpikesImage.fillAmount = 0f;
             }
         }
     }
@@ -140,6 +159,8 @@ public class SpellUsage : MonoBehaviour
             audioSource.PlayOneShot(fireballClip, 1f);
             isFireballCooldown = true;
             fireballCooldown = 1f;
+            fireballImage.fillAmount = 1;
+
         }
         if (isFireballCooldown)
         {
@@ -148,6 +169,11 @@ public class SpellUsage : MonoBehaviour
             {
                 fireballCooldown = 0f;
                 isFireballCooldown = false;
+            }
+            fireballImage.fillAmount -= 1 / fireballCooldownRate * Time.deltaTime;
+            if (fireballImage.fillAmount <= 0f)
+            {
+                fireballImage.fillAmount = 0f;
             }
         }
     }
@@ -160,6 +186,8 @@ public class SpellUsage : MonoBehaviour
             audioSource.PlayOneShot(earthquakeClip , 1f);
             isEarthquakeCooldown = true;
             earthquakeCooldown = 1f;
+            earthquakeImage.fillAmount = 1;
+
         }
         if (isEarthquakeCooldown)
         {
@@ -168,6 +196,11 @@ public class SpellUsage : MonoBehaviour
             {
                 earthquakeCooldown = 0f;
                 isEarthquakeCooldown = false;
+            }
+            earthquakeImage.fillAmount -= 1 / earthquakeCooldownRate * Time.deltaTime;
+            if (earthquakeImage.fillAmount <= 0f)
+            {
+                earthquakeImage.fillAmount = 0f;
             }
         }
     }
@@ -180,6 +213,9 @@ public class SpellUsage : MonoBehaviour
             audioSource.PlayOneShot(blackHoleClip , 1f);
             isBlackHoleCooldown = true;
             blackHoleCooldown = 1f;
+            blackHoleImage1.fillAmount = 1;
+            blackHoleImage2.fillAmount = 1;
+
         }
         if (isBlackHoleCooldown)
         {
@@ -189,7 +225,18 @@ public class SpellUsage : MonoBehaviour
                 blackHoleCooldown = 0f;
                 isBlackHoleCooldown = false;
             }
+            blackHoleImage1.fillAmount -= 1 / blackHoleCooldownRate * Time.deltaTime;
+            if (blackHoleImage1.fillAmount <= 0f)
+            {
+                blackHoleImage1.fillAmount = 0f;
+            }
+            blackHoleImage2.fillAmount -= 1 / blackHoleCooldownRate * Time.deltaTime;
+            if (blackHoleImage2.fillAmount <= 0f)
+            {
+                blackHoleImage2.fillAmount = 0f;
+            }
         }
+
     }
 
     // Update is called once per frame
