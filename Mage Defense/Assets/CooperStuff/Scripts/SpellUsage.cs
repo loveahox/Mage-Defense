@@ -104,12 +104,15 @@ public class SpellUsage : MonoBehaviour
     //FIX ROTATION AND DEPTH
     void PlaceGlue()
     {
-        if (Input.GetKeyDown(KeyCode.R) && !isGlueCooldown && GameManager.gm.coins >= 6)
+        if (Input.GetKeyDown(KeyCode.R) && !isGlueCooldown && GameManager.gm.coins >= 30)
         {
             Instantiate(glueTowerPrefab, worldPosition, /*ROTATION GOES HERE PLEASE FIX IT*/ glueTowerPrefab.transform.rotation);
             isGlueCooldown = true;
             glueCooldown = 1f;
-            GameManager.gm.addCoins(-6);
+
+
+
+            GameManager.gm.addCoins(-30);
 
         }
         if (isGlueCooldown)
