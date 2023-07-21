@@ -2321,7 +2321,7 @@ MonoBehaviour:
   earthquakeCooldownRate: 5
   isEarthquakeCooldown: 0
   blackHoleCooldown: 0
-  blackHoleCooldownRate: 15
+  blackHoleCooldownRate: 25
   isBlackHoleCooldown: 0
   glueCooldown: 1
   glueCooldownRate: 5
