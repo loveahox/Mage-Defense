@@ -100,6 +100,11 @@ public class SpellUsage : MonoBehaviour
         fireballCooldown = 0f;
         earthquakeCooldown = 0f;
         glueCooldown = 0f;
+        iceSpikesImage.fillAmount = 0f;
+        fireballImage.fillAmount = 0f;
+        earthquakeImage.fillAmount = 0f;
+        blackHoleImage1.fillAmount = 0f;
+        blackHoleImage2.fillAmount = 0f;
     }
     //FIX ROTATION AND DEPTH
     void PlaceGlue()
