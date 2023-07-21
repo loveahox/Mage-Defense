@@ -168,7 +168,7 @@ public class GameManager : MonoBehaviour
             }
             if (round == 16)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                SceneManager.LoadScene("GameWin");
             }
             inProgress = false;
         }
