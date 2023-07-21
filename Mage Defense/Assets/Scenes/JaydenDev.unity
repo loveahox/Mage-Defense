@@ -3023,7 +3023,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 12443000b4e46d24fb0dfc27743fccad, type: 3}
     source: {fileID: 0}
   fireballClip: {fileID: 0}
-  iceSpikesClip: {fileID: 0}
+  iceSpikesClip: {fileID: 8300000, guid: e55ffd8e0c619034ca60494dfc9f657f, type: 3}
   earthquakeClip: {fileID: 0}
   blackHoleClip: {fileID: 0}
   Goblin: {fileID: 5344831692142128316, guid: 87aad4b3bae3a43848b0b4f0153d9adf, type: 3}
