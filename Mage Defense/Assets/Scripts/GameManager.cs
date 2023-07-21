@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     //for text
     public Text textElement;
     public TextMeshProUGUI coinsValue;
+    public TextMeshProUGUI waveCounter;
     
     public HealthBarScript SN;
 
@@ -209,6 +210,7 @@ public class GameManager : MonoBehaviour
         }
         textElement.text = "Health: " + chestHealth+" Wave: "+ round;
         coinsValue.text = "" + coins;
+        waveCounter.text = "Wave: " + round;
     }
 
     //SFX

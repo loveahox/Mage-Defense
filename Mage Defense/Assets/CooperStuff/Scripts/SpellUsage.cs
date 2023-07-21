@@ -103,8 +103,7 @@ public class SpellUsage : MonoBehaviour
         iceSpikesImage.fillAmount = 0f;
         fireballImage.fillAmount = 0f;
         earthquakeImage.fillAmount = 0f;
-        blackHoleImage1.fillAmount = 0f;
-        blackHoleImage2.fillAmount = 0f;
+        
     }
     //FIX ROTATION AND DEPTH
     void PlaceGlue()
