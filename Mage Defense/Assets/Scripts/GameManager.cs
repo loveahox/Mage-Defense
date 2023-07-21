@@ -266,4 +266,9 @@ public class GameManager : MonoBehaviour
     SceneManager.LoadScene("GameOver");
     
     }
+
+    public void glueGunnerSFX()
+    {
+    audioSource.PlayOneShot(iceSpikesClip , 0.5f);
+    }
 }

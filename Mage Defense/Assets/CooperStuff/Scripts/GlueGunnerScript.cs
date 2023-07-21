@@ -1,4 +1,4 @@
- using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,8 +16,9 @@ public class GlueGunnerScript : MonoBehaviour
     public bool firing = false;
     public bool alreadyTargeting = false;
 
-
-
+    //SFX
+    private AudioSource audioSource;
+    public AudioClip glueStrike;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class GlueGunnerScript : MonoBehaviour
     void SpawnProjectile()
     {
         Instantiate(projectile, transform.position, transform.rotation);
+        GameManager.gm.glueGunnerSFX(); 
     }
     // Update is called once per frame
     void Update()
